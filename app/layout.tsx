@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Header } from "@/modules/header/header-view";
 import { ThemeProvider } from "@/components/theme-provider";
 import { DotPattern } from "@/components/ui/dot-pattern";
+import { Footer } from "@/modules/footer/footer-view";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
             <DotPattern />
             {children}
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
