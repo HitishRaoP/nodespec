@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTitle, SheetDescription, SheetHeader, SheetTrigger, SheetFooter } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTitle, SheetHeader, SheetTrigger, SheetFooter } from "@/components/ui/sheet"
 
 export const HEADER_NAV_ITEMS = [
     {
@@ -26,15 +26,15 @@ export const HEADER_NAV_ITEMS = [
 
 export const Header = () => {
     return (
-        <header className='py-4 border'>
-            <div className='flex max-w-6xl mx-auto items-center justify-between'>
-                <Link href="/" className='mr-2 sm:mr-4 md:mr-10'>
-                    <Image src="/nodespec.png" alt="Logo" width={60} height={60} />
+        <header className='py-6 border'>
+            <div className='flex max-w-6xl mx-auto items-center justify-between px-4'>
+                <Link href="/" className='text-lg'>
+                    NodeSpec
                 </Link>
 
                 <nav className='hidden md:flex items-center justify-start gap-10'>
                     {HEADER_NAV_ITEMS.map((item) => (
-                        <Link key={item.href} href={item.href} className='font-light bg-gradient-to-tr from-muted-foreground to-foreground bg-clip-text text-transparent'>
+                        <Link key={item.href} href={item.href}>
                             {item.label}
                         </Link>
                     ))}

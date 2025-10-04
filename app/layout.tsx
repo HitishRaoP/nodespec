@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <ThemeProvider >
           <Header />
-          <main className="max-w-6xl mx-auto border-x">
+          <main className="max-w-6xl mx-auto">
             <DotPattern />
             {children}
           </main>
