@@ -4,6 +4,7 @@ import React from 'react'
 import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTitle, SheetHeader, SheetTrigger, SheetFooter } from "@/components/ui/sheet"
+import { Container } from '@/components/ui/container'
 
 export const HEADER_NAV_ITEMS = [
     {
@@ -27,7 +28,7 @@ export const HEADER_NAV_ITEMS = [
 export const Header = () => {
     return (
         <header className='py-6 border'>
-            <div className='flex max-w-6xl mx-auto items-center justify-between px-4'>
+            <Container className='flex items-center justify-between px-4'>
                 <Link href="/" className='text-lg'>
                     NodeSpec
                 </Link>
@@ -75,7 +76,7 @@ export const Header = () => {
                         </SheetFooter>
                     </SheetContent>
                 </Sheet>
-            </div>
+            </Container>
         </header>
     )
 }

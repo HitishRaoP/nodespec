@@ -5,6 +5,7 @@ import { Header } from "@/modules/header/header-view";
 import { ThemeProvider } from "@/components/theme-provider";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { Footer } from "@/modules/footer/footer-view";
+import { Container } from "@/components/ui/container";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,10 +27,10 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <ThemeProvider >
           <Header />
-          <main className="max-w-6xl mx-auto">
+          <Container>
             <DotPattern />
             {children}
-          </main>
+          </Container>
           <Footer />
         </ThemeProvider>
       </body>
