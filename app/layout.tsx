@@ -1,39 +1,27 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Inter } from "next/font/google";
-import { Header } from "@/modules/header/header-view";
-import { ThemeProvider } from "@/components/theme-provider";
-import { DotPattern } from "@/components/ui/dot-pattern";
-import { Footer } from "@/modules/footer/footer-view";
-import { Container } from "@/components/ui/container";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+import type { Metadata } from 'next';
+import './globals.css';
+import { ThemeProvider } from '@/components/theme-provider';
+import { Container } from '@/components/ui/container';
+import { fonts } from '@/lib/fonts';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: "NodeSpec",
-  description: "NodeSpec",
+	title: 'NodeSpec',
+	description: 'NodeSpec',
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={`${inter.className}`}>
-        <ThemeProvider >
-          <Header />
-          <Container>
-            <DotPattern />
-            {children}
-          </Container>
-          <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body className={cn(fonts.ibmPlexSans.className)}>
+				<ThemeProvider>
+					<Container>{children}</Container>
+				</ThemeProvider>
+			</body>
+		</html>
+	);
 }
