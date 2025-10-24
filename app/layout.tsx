@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeProvider } from '@/components/providers/theme-provider';
 import { Container } from '@/components/ui/container';
 import { fonts } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
+import { DockNav } from '@/modules/dock-nav';
+import { Header } from '@/modules/header-view';
 
 export const metadata: Metadata = {
 	title: 'NodeSpec',
@@ -19,7 +21,9 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={cn(fonts.ibmPlexSans.className)}>
 				<ThemeProvider>
+					<Header />
 					<Container>{children}</Container>
+					<DockNav />
 				</ThemeProvider>
 			</body>
 		</html>

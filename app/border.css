@@ -1,0 +1,55 @@
+@layer base {
+    * {
+      @apply border-border outline-ring/50;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+
+  @layer utilities {
+    .border-dashed-animated {
+      border: 1.5px dashed transparent;
+      background:
+        repeating-linear-gradient(0deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 0 0 / 1.5px 100% no-repeat,
+        repeating-linear-gradient(90deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 0 0 / 100% 1.5px no-repeat,
+        repeating-linear-gradient(180deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 100% 0 / 1.5px 100% no-repeat,
+        repeating-linear-gradient(270deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 0 100% / 100% 1.5px no-repeat;
+    }
+
+    .border-t-dashed-animated {
+      border-top: 1.5px dashed transparent;
+      background: repeating-linear-gradient(90deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 0 0 / 100% 1.5px no-repeat;
+    }
+
+    .border-b-dashed-animated {
+      border-bottom: 1.5px dashed transparent;
+      background: repeating-linear-gradient(90deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 0 100% / 100% 1.5px no-repeat;
+    }
+
+    .border-l-dashed-animated {
+      border-left: 1.5px dashed transparent;
+      background: repeating-linear-gradient(0deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 0 0 / 1.5px 100% no-repeat;
+    }
+
+    .border-r-dashed-animated {
+      border-right: 1.5px dashed transparent;
+      background: repeating-linear-gradient(0deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 100% 0 / 1.5px 100% no-repeat;
+    }
+
+    .border-x-dashed-animated {
+      border-left: 1.5px dashed transparent;
+      border-right: 1.5px dashed transparent;
+      background:
+        repeating-linear-gradient(0deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 0 0 / 1.5px 100% no-repeat,
+        repeating-linear-gradient(0deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 100% 0 / 1.5px 100% no-repeat;
+    }
+
+    .border-y-dashed-animated {
+      border-top: 1.5px dashed transparent;
+      border-bottom: 1.5px dashed transparent;
+      background:
+        repeating-linear-gradient(90deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 0 0 / 100% 1.5px no-repeat,
+        repeating-linear-gradient(90deg, var(--border) 0, var(--border) 10px, transparent 10px, transparent 20px) 0 100% / 100% 1.5px no-repeat;
+    }
+  }
