@@ -22,7 +22,7 @@ export default function RootLayout({
 			<body className={cn(fonts.ibmPlexSans.className)}>
 				<ThemeProvider>
 					<Header />
-					<Container>{children}</Container>
+					<Container className="border-x">{children}</Container>
 					<DockNav />
 				</ThemeProvider>
 			</body>

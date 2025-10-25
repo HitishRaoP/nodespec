@@ -1,5 +1,11 @@
 'use client';
 
+import { FAQSection } from '@/modules/faq-section';
+
 export default function Home() {
-	return <div>Home</div>;
+	return (
+		<div>
+			<FAQSection />
+		</div>
+	);
 }
