@@ -5,6 +5,7 @@ import { Container } from '@/components/ui/container';
 import { fonts } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import { DockNav } from '@/modules/dock-nav';
+import { Footer } from '@/modules/footer';
 import { Header } from '@/modules/header-view';
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({
 				<ThemeProvider>
 					<Header />
 					<Container className="border-x">{children}</Container>
+					<Footer />
 					<DockNav />
 				</ThemeProvider>
 			</body>

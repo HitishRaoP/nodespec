@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
+import { env } from '@/lib/env';
 
 export const Header = () => {
 	return (
@@ -18,7 +19,7 @@ export const Header = () => {
 						NodeSpec
 					</span>
 				</Link>
-				<Link href="/book-call">
+				<Link href={env.NEXT_PUBLIC_DISCOVERY_CALL_URL}>
 					<Button className="rounded-3xl" size={'lg'}>
 						Book Call
 					</Button>

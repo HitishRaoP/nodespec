@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import type React from 'react';
+import { useEffect, useState } from 'react';
 import { buttonVariants } from '@/components/ui/button';
 import { Dock, DockIcon } from '@/components/ui/dock';
 import {
@@ -30,7 +31,7 @@ const HomeIcon = (props: React.SVGProps<SVGSVGElement>) => (
 	</svg>
 );
 
-const WorksIcon = (props: React.SVGProps<SVGSVGElement>) => (
+const WorksIcon = (_props: React.SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-hidden="true"
 		xmlns="http://www.w3.org/2000/svg"
@@ -101,8 +102,27 @@ const DATA = {
 };
 
 export function DockNav() {
+	const [isFooterVisible, setIsFooterVisible] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const footer = document.querySelector('footer');
+			if (!footer) return;
+			const footerRect = footer.getBoundingClientRect();
+			const isVisible = footerRect.top < window.innerHeight;
+			setIsFooterVisible(isVisible);
+		};
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+
 	return (
-		<div className="fixed bottom-0 left-0 right-0 mb-6 px-6 flex flex-col items-center justify-center">
+		<div
+			className={cn(
+				'fixed bottom-0 left-0 right-0 mb-6 px-6 flex flex-col items-center justify-center transition-opacity duration-300',
+				isFooterVisible ? 'opacity-0 pointer-events-none' : 'opacity-100',
+			)}
+		>
 			<TooltipProvider>
 				<Dock
 					direction="middle"
